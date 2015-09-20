@@ -1,0 +1,19 @@
+#/usr/bin/bash
+
+if [ "$#" -ne 2 ] && [ "$#" -ne 1 ]; then
+    echo "Usage: ./class_find.sh <class_abrev> <class_number>"
+else
+    if [ "$#" -eq 1 ]; then
+        class=$(echo "$1" | grep -o '[a-zA-Z]\+')
+        num=$(echo "$1" | grep -o '[0-9]\+')
+    else
+        class=$1
+        num=$2
+    fi
+    
+    directory=$(find "$HOME/Dropbox/My Stuff/School Work" -type d -iname "$class $num*" | head -n 1)
+
+    echo "$directory"
+
+    cd "$directory"
+fi

@@ -1,0 +1,50 @@
+#/usr/bin/bash
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ $# -lt 2 ] || [ $# -gt 3 ]; then
+    echo "Usage: create_note <class_abrev> <class_number> <note_extension>"
+    exit 0
+fi
+
+# figure out the default note extension
+if [ -f ~/.robbiecfg ]; then
+    source ~/.robbiecfg
+else
+    NOTE_EXT=".md"
+fi
+
+# if we were passed a note extension, override
+if [ $# -eq 3 ]; then
+    NOTE_EXT=.$3
+fi
+
+docname=$(date "+%F")$NOTE_EXT
+
+uppercase_class=$(echo $1 | awk '{print toupper($0)}')
+
+echo "Creating $docname..."
+
+if [ -f $docname ]; then
+   continue="start"
+   until [ -z $continue ] || [ $continue == "Y" ] || 
+         [ $continue == "y" ] || [ $continue == "N" ] || 
+	 [ $continue == "n" ]; do
+       echo -n "$docname already exists. Overwrite (y/[n])? "
+       read continue
+   done
+
+   if [ -z $continue ] || [ $continue == "N" ] || 
+      [ $continue == "n" ]; then
+       exit 1
+   fi
+
+   echo "Overwriting..."
+fi
+
+cat > $docname <<EOF
+$uppercase_class $2 Notes
+===========
+
+### $(date "+%B %d, %Y")
+EOF
+
+emacs $docname &
