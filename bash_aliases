@@ -1,0 +1,1 @@
+alias find_class=". find_class"
