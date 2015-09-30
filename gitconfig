@@ -11,7 +11,7 @@
     cm = commit -m
     cam = commit -am
     stat = status -s
-    pull = pull --rebase
+    pullr = pull --rebase
 [push]
 	default = matching
 [core]
