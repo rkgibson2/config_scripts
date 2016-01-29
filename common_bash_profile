@@ -1,4 +1,4 @@
-# ~/.bash_profile
+# ~/config_scripts/common_bash_profile
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -95,11 +95,7 @@ if ! shopt -oq posix; then
 fi
 
 # Add ~/bin to pathname
-export PATH="~/bin:~/bin/scripts:/Users/rgibson/Library/Python/2.7/bin:$PATH"
+export PATH="~/bin:~/bin/scripts:$PATH"
 
 # set editor to emacs
 export EDITOR="emacs"
-
-# setup virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /Users/rgibson/Library/Python/2.7/bin/virtualenvwrapper.sh
