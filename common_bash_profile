@@ -79,8 +79,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/config_scripts/bash_aliases ]; then
+    . ~/config_scripts/bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -94,8 +94,33 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# -------------------------------------------------
+
+# load colors
+if [ -f ~/config_scripts/bash_colors ]; then
+    . ~/config_scripts/bash_colors
+fi
+
 # Add ~/bin to pathname
 export PATH="~/bin:~/bin/scripts:$PATH"
 
-# set editor to emacs
-export EDITOR="emacs"
+# editor
+export VISUAL=emacs
+export EDITOR="$VISUAL"
+
+# git completion
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
+# git prompt
+if [ -f ~/.git-prompt.sh ]; then
+    . ~/.git-prompt.sh
+    export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET}\$(__git_ps1 \" (%s)\") $ "
+else
+    export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET} $ "
+fi
+
+# prompt
+# export DEFAULT_PS1="\h:\W \u\$"
+export GIT_PS1_SHOWDIRTYSTATE=1
