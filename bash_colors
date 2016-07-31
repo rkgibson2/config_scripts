@@ -1,0 +1,17 @@
+RESET="\[\033[0m\]"        # reset
+FBLACK="\[\033[01;30m\]"   # foreground black
+FRED="\[\033[01;31m\]"     # foreground red
+FGREEN="\[\033[01;32m\]"   # foreground green
+FYELLOW="\[\033[01;33m\]"  # foreground yellow
+FBLUE="\[\033[01;34m\]"    # foreground blue
+FMAGENTA="\[\033[01;35m\]" # foreground magenta
+FCYAN="\[\033[01;36m\]"    # foreground cyan
+FWHITE="\[\033[01;37m\]"   # foreground white
+BBLACK="\[\033[40m\]"      # background black
+BRED="\[\033[41m\]"        # background red
+BGREEN="\[\033[42m\]"      # background green
+BYELLOW="\[\033[43m\]"     # background yellow
+BBLUE="\[\033[44m\]"       # background blue
+BMAGENTA="\[\033[45m\]"    # background magenta
+BCYAN="\[\033[46m\]"       # background cyan
+BWHITE="\[\033[47m\]"      # background white
