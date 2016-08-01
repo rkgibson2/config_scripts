@@ -117,10 +117,7 @@ fi
 if [ -f ~/.git-prompt.sh ]; then
     . ~/.git-prompt.sh
     export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET}\$(__git_ps1 \" (%s)\") $ "
+    export GIT_PS1_SHOWDIRTYSTATE=1
 else
     export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET} $ "
 fi
-
-# prompt
-# export DEFAULT_PS1="\h:\W \u\$"
-export GIT_PS1_SHOWDIRTYSTATE=1
