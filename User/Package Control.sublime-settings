@@ -6,7 +6,12 @@
 	"installed_packages":
 	[
 		"3024 Color Scheme",
+		"All Autocomplete",
+		"GitGutter",
+		"Markdown Preview",
 		"SFTP",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
 		"Theme - Flatland"
 	]
 }
