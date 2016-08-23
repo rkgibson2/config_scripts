@@ -12,6 +12,7 @@
     cam = commit -am
     stat = status -s
     pullr = pull --rebase
+    changes = show --pretty="" --name-status
 [push]
 	default = matching
 [core]
