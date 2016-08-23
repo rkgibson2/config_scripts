@@ -31,7 +31,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# Set CLICOLOR if you want Ansi Colors in iTerm2 
+# Set CLICOLOR if you want Ansi Colors in iTerm2
 export CLICOLOR=1
 
 # Set colors to match iTerm2 Terminal Colors
@@ -118,6 +118,7 @@ if [ -f ~/.git-prompt.sh ]; then
     . ~/.git-prompt.sh
     export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET}\$(__git_ps1 \" (%s)\") $ "
     export GIT_PS1_SHOWDIRTYSTATE=1
+    export GIT_PS1_SHOWUNTRACKEDFILES=1
 else
     export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET} $ "
 fi
