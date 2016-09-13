@@ -119,6 +119,7 @@ if [ -f ~/.git-prompt.sh ]; then
     export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET}\$(__git_ps1 \" (%s)\") $ "
     export GIT_PS1_SHOWDIRTYSTATE=1
     export GIT_PS1_SHOWUNTRACKEDFILES=1
+    export GIT_PS1_SHOWSTASHSTATE=1
 else
     export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET} $ "
 fi
