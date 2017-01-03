@@ -17,3 +17,5 @@
 	default = matching
 [core]
 	autocrlf = input
+[branch]
+    autosetuprebase = always
