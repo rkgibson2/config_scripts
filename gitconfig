@@ -5,8 +5,20 @@
 	color = auto
 [color]
 	ui = auto
+[color "diff"]
+    commit = bold dim white
+[color "decorate"]
+    branch = bold green
+    remoteBranch = bold red
+    tag = bold dim white
+    HEAD = bold cyan
 [alias]
-    hist = log --graph --oneline --branches --decorate
+    lg = !git lg1
+    slg = !git lg2
+
+    lg1 = log --graph --abbrev-commit --decorate --branches --remotes --format=format:'%C(bold blue)%h%C(reset) -%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset) %C(bold green)(%ar)%C(reset)'
+    lg2 = log --graph --oneline --branches --remotes --decorate --format=format:'%C(bold blue)%h%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset)'
+
     c = commit
     cm = commit -m
     cam = commit -am
