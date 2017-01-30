@@ -22,6 +22,7 @@
     c = commit
     cm = commit -m
     cam = commit -am
+    amend = commit --amend --no-edit
     stat = status -s
     pullr = pull --rebase
     changes = show --pretty="" --name-status
