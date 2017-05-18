@@ -120,6 +120,8 @@ if [ -f ~/.git-prompt.sh ]; then
     export GIT_PS1_SHOWDIRTYSTATE=1
     export GIT_PS1_SHOWUNTRACKEDFILES=1
     export GIT_PS1_SHOWSTASHSTATE=1
+    export GIT_PS1_DESCRIBE_STYLE=branch
+    export GIT_PS1_SHOWCOLORHINTS=1
 else
     export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET} $ "
 fi
