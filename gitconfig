@@ -1,0 +1,2 @@
+[include]
+    path = ~/config_scripts/common_gitconfig
