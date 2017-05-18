@@ -1,6 +1,8 @@
 [user]
 	name = Robbie Gibson
 	email = rkgibson2@gmail.com
+[core]
+    excludesfile = /Users/rgibson/.gitignore_global
 [ui]
 	color = auto
 [color]
@@ -26,6 +28,10 @@
     stat = status -s
     pullr = pull --rebase
     changes = show --pretty="" --name-status
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    reb-branch = rebase --committer-date-is-author-date
+    name-diff = git diff --name-only
 [push]
 	default = matching
 [core]
