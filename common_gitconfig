@@ -31,7 +31,7 @@
     unstage = reset HEAD --
     last = log -1 HEAD
     reb-branch = rebase --committer-date-is-author-date
-    name-diff = git diff --name-only
+    name-diff = diff --name-only
 [push]
 	default = matching
 [core]
