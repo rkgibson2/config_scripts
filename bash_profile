@@ -1,3 +1,3 @@
-if [ -f ~/config_scripts/common_bash_profile.sh ]; then
-    . ~/config_scripts/common_bash_profile.sh
+if [ -f ~/.common_bash_profile.sh ]; then
+    . ~/.common_bash_profile.sh
 fi

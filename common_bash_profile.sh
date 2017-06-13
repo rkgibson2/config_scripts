@@ -47,6 +47,7 @@ esac
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
+
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -79,8 +80,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/config_scripts/bash_aliases ]; then
-    . ~/config_scripts/bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -97,8 +98,8 @@ fi
 # -------------------------------------------------
 
 # load colors
-if [ -f ~/config_scripts/bash_colors ]; then
-    . ~/config_scripts/bash_colors
+if [ -f ~/.bash_colors.sh ]; then
+    . ~/.bash_colors.sh
 fi
 
 # Add ~/bin to pathname
@@ -125,3 +126,10 @@ if [ -f ~/.git-prompt.sh ]; then
 else
     export PS1="${FGREEN}\u${RESET}:${FBLUE}\W${RESET} $ "
 fi
+
+# virtualenv wrapper setup
+export WORKON_HOME=$HOME/.Envs
+test -e /usr/local/bin/virtualenvwrapper.sh && source /usr/local/bin/virtualenvwrapper.sh
+
+# export DEFAULT_PS1="\h:\W \u\$"
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
