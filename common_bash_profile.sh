@@ -133,3 +133,8 @@ test -e /usr/local/bin/virtualenvwrapper.sh && source /usr/local/bin/virtualenvw
 
 # export DEFAULT_PS1="\h:\W \u\$"
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# remove duplicates in path
+PATH="$(printf "%s" "${PATH}" | /usr/bin/awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')"
+PATH="${PATH%:}"    # remove trailing colon"
+export PATH
