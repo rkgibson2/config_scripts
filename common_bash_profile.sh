@@ -103,7 +103,7 @@ if [ -f ~/.bash_colors.sh ]; then
 fi
 
 # Add ~/bin to pathname
-export PATH="~/bin:~/bin/scripts:$PATH"
+export PATH="$HOME/bin:$HOME/bin/scripts:$PATH"
 
 # editor
 export VISUAL=emacs
