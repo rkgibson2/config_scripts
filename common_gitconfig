@@ -32,6 +32,8 @@
     last = log -1 HEAD
     reb-branch = rebase --committer-date-is-author-date
     name-diff = diff --name-only
+
+    reb-last = "!f() { BRANCH=${1:-`git branch --show-current`}; git rebase --onto ${2:-master} $BRANCH~1 $BRANCH; }; f"
 [push]
     default = matching
 [core]
