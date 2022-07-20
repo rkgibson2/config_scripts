@@ -106,7 +106,7 @@ fi
 export PATH="$HOME/bin:$HOME/bin/scripts:$PATH"
 
 # editor
-export VISUAL=emacs
+export VISUAL="emacs -nw"
 export EDITOR="$VISUAL"
 
 # git completion
