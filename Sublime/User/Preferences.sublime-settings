@@ -31,7 +31,7 @@
     "highlight_modified_tabs": true,
     "ignored_packages":
     [
-        "Vintage"
+        "Vintage",
     ],
     "indent_to_bracket": true,
     "line_padding_bottom": 0,

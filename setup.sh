@@ -43,7 +43,7 @@ fi
 # link sublime config files
 echo "Symlinking sublime config files"
 SCRIPT_WD="`pwd`"
-cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
+cd ~/Library/Application\ Support/Sublime\ Text/Packages/
 rm -r User
 ln -s $SCRIPT_WD/Sublime/User
 cd $SCRIPT_WD
